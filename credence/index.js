@@ -39,10 +39,19 @@ console.log('Result is: ', result);
 function serverResponse(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    if(req.url === '/'){
+    if(req.url === '/')
+    {
       var result = fs.readFileSync('templates/home.html', 'utf8');
-      res.write(result);}
-      res.end();
+      res.write(result);
+    }
+    else if(req.url === '/fetch')
+    {
+      fetchData();
+          
+      var result = fs.readFileSync('templates/fetched.html', 'utf8');
+      res.write(result);
+    }
+    res.end();
 }   
 
 const server = http.createServer(serverResponse).listen(8000);
