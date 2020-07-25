@@ -33,3 +33,25 @@ function renderHtml(templatefile, data){
 
 var result = renderHtml(template_file, data);
 console.log('Result is: ', result);
+
+// Creating sever at localhost:8000
+
+function serverResponse(req, res)
+{
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.readFile('templates/template.html', null, function(err, data){
+        if(err)
+        {
+            res.writeHead(404);
+            res.write('File Not Found!');
+        }
+        else
+        {
+            res.write(data);
+        }
+        res.end();
+    });
+}   
+
+const server = http.createServer(serverResponse).listen(8000);
+console.log('server is running at http://localhost:8000');
