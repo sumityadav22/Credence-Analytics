@@ -14,3 +14,22 @@ function fetchData() {
       });
   });
 }
+
+// Reading local data file
+template_file = 'templates/template.html';
+data = {
+	name: "Sumit Yadav",
+	age: 21,
+	location: "Mumbai"
+}
+
+function renderHtml(templatefile, data){
+  var source   = fs.readFileSync(templatefile,'utf8').toString();
+  var template = handlebars.compile(source);
+
+  var output = template(data);
+  return output;
+}
+
+var result = renderHtml(template_file, data);
+console.log('Result is: ', result);
