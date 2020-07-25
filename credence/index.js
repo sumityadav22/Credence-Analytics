@@ -39,18 +39,10 @@ console.log('Result is: ', result);
 function serverResponse(req, res)
 {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.readFile('templates/template.html', null, function(err, data){
-        if(err)
-        {
-            res.writeHead(404);
-            res.write('File Not Found!');
-        }
-        else
-        {
-            res.write(data);
-        }
-        res.end();
-    });
+    if(req.url === '/'){
+      var result = fs.readFileSync('templates/home.html', 'utf8');
+      res.write(result);}
+      res.end();
 }   
 
 const server = http.createServer(serverResponse).listen(8000);
