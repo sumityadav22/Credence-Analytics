@@ -1,0 +1,23 @@
+{
+  "name": "credence_analytics",
+  "version": "1.0.0",
+  "description": "Credence Analytics Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumityadav22/Credence-Analytics.git"
+  },
+  "author": "Sumit Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumityadav22/Credence-Analytics/issues"
+  },
+  "homepage": "https://github.com/sumityadav22/Credence-Analytics#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "handlebars": "^4.7.6"
+  }
+}
