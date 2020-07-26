@@ -33,6 +33,9 @@ function generateReport(report_type=1) {
     template_file = 'templates/template1.handlebars';
   }
   else if (report_type == 2) {
+      data.main.temp = (data.main.temp - 273.15).toFixed(1)
+      data.main.temp_min = (data.main.temp_min - 273.15).toFixed(1)
+      data.main.temp_max = (data.main.temp_max - 273.15).toFixed(1)
       template_file = 'templates/template2.handlebars';
     }
 
