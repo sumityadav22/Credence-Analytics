@@ -46,4 +46,4 @@ If you need to update `npm`, you can make it using `npm`! After running the foll
     $ node index.js
 
 ### This is how the project will look after cloning this repository
-> !["Something went wrong!"](output/Credence_Analytics_Project.gif)
+> !["Something went wrong!"](Credence_Analytics_Project.gif)
