@@ -15,13 +15,6 @@ function fetchData() {
   });
 }
 
-// Reading local data file
-template_file = 'templates/template.html';
-data = {
-	name: "Sumit Yadav",
-	age: 21,
-	location: "Mumbai"
-}
 
 function renderHtml(templatefile, data){
   var source   = fs.readFileSync(templatefile,'utf8').toString();
@@ -31,8 +24,18 @@ function renderHtml(templatefile, data){
   return output;
 }
 
-var result = renderHtml(template_file, data);
-console.log('Result is: ', result);
+
+//  Generating HTML Report
+
+function generateReport(report_type=1) {
+  var data = JSON.parse(fs.readFileSync(data_file, 'utf8'));
+  if (report_type == 1) {
+    template_file = 'templates/template1.handlebars';
+  }
+
+  var result = renderHtml(template_file, data);
+  return result
+}
 
 // Creating sever at localhost:8000
 
@@ -51,6 +54,11 @@ function serverResponse(req, res)
       var result = fs.readFileSync('templates/fetched.html', 'utf8');
       res.write(result);
     }
+    else if(req.url === '/reports1') 
+        {
+          result = generateReport(1);
+          res.write(result);
+        }
     res.end();
 }   
 

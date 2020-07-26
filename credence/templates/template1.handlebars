@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Credence Aanlytics | Sample 1</title>
+        <style>
+            table,
+            th,
+            td {
+                padding: 5px;
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dataTable">
+            <table>
+                <tr>
+                    <th>City</th>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <th>Weather</th>
+                    <td>{{weather.0.main}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{weather.0.description}}</td>
+                </tr>
+                <tr>
+                    <th>Current Temperature</th>
+                    <td>{{main.temp}}</td>
+                </tr>
+                <tr>
+                    <th>Maximum Temperature</th>
+                    <td>{{main.temp_max}}</td>
+                </tr>
+                <tr>
+                    <th>Minimum Temperature</th>
+                    <td>{{main.temp_min}}</td>
+                </tr>
+                <tr>
+                    <th>Pressure</th>
+                    <td>{{main.pressure}}</td>
+                </tr>
+                <tr>
+                    <th>Humidity</th>
+                    <td>{{main.humidity}}</td>
+                </tr>
+                <tr>
+                    <th>Visibility</th>
+                    <td>{{visibility}}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
