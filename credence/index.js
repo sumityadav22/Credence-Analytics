@@ -32,6 +32,9 @@ function generateReport(report_type=1) {
   if (report_type == 1) {
     template_file = 'templates/template1.handlebars';
   }
+  else if (report_type == 2) {
+      template_file = 'templates/template2.handlebars';
+    }
 
   var result = renderHtml(template_file, data);
   return result
@@ -59,6 +62,11 @@ function serverResponse(req, res)
           result = generateReport(1);
           res.write(result);
         }
+    else if(req.url === '/reports2') {
+          result = generateReport(2);
+          res.write(result);
+        }
+
     res.end();
 }   
 
