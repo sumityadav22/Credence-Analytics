@@ -3,24 +3,66 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Credence Aanlytics | Sample 2</title>
+        <title>Credence Aanlytics | Sample 1</title>
+        <style>
+            table,
+            th,
+            td {
+                padding: 5px;
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+        </style>
     </head>
     <body>
-        <div id="dataSection">
-            {{name}}, {{sys.country}} {{weather.0.description}}
-            <br>
-            {{main.temp}} &#8451; temperature from {{main.temp_min}} to {{main.temp_max}} &#8451;, wind {{wind.speed}} m/s. clouds {{clouds.all}} %, {{main.pressure}} hpa
-            <br>
-            Geo chords [{{coord.lat}},{{coord.lon}}]
+        <div id="dataTable">
+            <table>
+                <tr>
+                    <th>City</th>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <th>Weather</th>
+                    <td>{{weather.0.main}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{weather.0.description}}</td>
+                </tr>
+                <tr>
+                    <th>Current Temperature</th>
+                    <td>{{main.temp}}</td>
+                </tr>
+                <tr>
+                    <th>Maximum Temperature</th>
+                    <td>{{main.temp_max}}</td>
+                </tr>
+                <tr>
+                    <th>Minimum Temperature</th>
+                    <td>{{main.temp_min}}</td>
+                </tr>
+                <tr>
+                    <th>Pressure</th>
+                    <td>{{main.pressure}}</td>
+                </tr>
+                <tr>
+                    <th>Humidity</th>
+                    <td>{{main.humidity}}</td>
+                </tr>
+                <tr>
+                    <th>Visibility</th>
+                    <td>{{visibility}}</td>
+                </tr>
+            </table>
         </div>
         <br>
-        <button onclick="downloadContent('pattern2.html','dataSection','text/html')">
-            Download report as html
+        <button onclick="downloadTable('pattern2.html','dataTable','text/html')">
+            Download table as html
         </button>
         <br>
     </body>
     <script>
-        function downloadContent(filename, elId, mimeType) {
+        function downloadTable(filename, elId, mimeType) {
             var elHtml = document.getElementById(elId).innerHTML;
             var link = document.createElement('a');
             mimeType = mimeType || 'text/plain';
