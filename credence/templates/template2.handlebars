@@ -13,5 +13,21 @@
             <br>
             Geo chords [{{coord.lat}},{{coord.lon}}]
         </div>
+        <br>
+        <button onclick="downloadContent('pattern2.html','dataSection','text/html')">
+            Download report as html
+        </button>
+        <br>
     </body>
+    <script>
+        function downloadContent(filename, elId, mimeType) {
+            var elHtml = document.getElementById(elId).innerHTML;
+            var link = document.createElement('a');
+            mimeType = mimeType || 'text/plain';
+
+            link.setAttribute('download', filename);
+            link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+            link.click(); 
+        };
+    </script>
 </html>

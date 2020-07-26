@@ -55,5 +55,21 @@
                 </tr>
             </table>
         </div>
+        <br>
+        <button onclick="downloadTable('pattern1.html','dataTable','text/html')">
+            Download table as html
+        </button>
+        <br>
     </body>
+    <script>
+        function downloadTable(filename, elId, mimeType) {
+            var elHtml = document.getElementById(elId).innerHTML;
+            var link = document.createElement('a');
+            mimeType = mimeType || 'text/plain';
+
+            link.setAttribute('download', filename);
+            link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+            link.click(); 
+        };
+    </script>
 </html>
