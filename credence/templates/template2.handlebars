@@ -3,18 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Credence Aanlytics | Sample 1</title>
-        <style>
-            table,
-            th,
-            td {
-                padding: 5px;
-                border: 2px solid black;
-                border-collapse: collapse;
-            }
-        </style>
+        <title>Credence Aanlytics | Sample 2</title>
     </head>
     <body>
+        <h1>Pattern 2</h1>
         <div id="dataTable">
             <table>
                 <tr>
@@ -56,10 +48,51 @@
             </table>
         </div>
         <br>
-        <button onclick="downloadTable('pattern2.html','dataTable','text/html')">
-            Download table as html
+        <button id ='dw_btn' onclick="downloadTable('pattern2.html','dataTable','text/html')">
+            Download table
         </button>
+        <a href="/">
+            <button id ='render_btn'>Home</button>
+        </a>
+        <a href="/reports1">
+            <button id = 'render_btn'>Pattern 1</button>
+        </a>
         <br>
+        <!-- Styling the interface -->
+        <style>
+            a{text-decoration: none;}
+
+            table,th,td 
+            {
+                padding: 5px;
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+
+            #dw_btn 
+            {
+                background-color: DodgerBlue;
+                border: none;
+                color: white;
+                padding: 10px 30px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            #dw_btn:hover 
+            {
+                background-color: RoyalBlue;
+            }
+            
+            #render_btn
+            {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 10px 10px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
     </body>
     <script>
         function downloadTable(filename, elId, mimeType) {
